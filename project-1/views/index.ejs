@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #a {
+            text-align: center;
+            align-items: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        button[type="submit"] {
+            background-color: #7db0d6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #63b4c8;
+        }
+
+        #aa {
+            margin-top: 40px;
+        }
+
+        table {
+            width: 80%;
+            margin-left: 10%;
+            text-align: center;
+            align-items: center;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #000000;
+            color:white;
+        }
+
+       
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+       
+        .action-button {
+            margin: 10px;
+        }
+
+        .action-button button {
+            background-color: #4c96af;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .action-button button:hover {
+            background-color: #4ea0b4;
+        }
+    </style>
+</head>
+
+<body id="a">
+    <h1>FORM</h1>
+
+    <form action="/insert" method="post">
+        <label for="">Name :</label>
+        <input type="text" placeholder="Enter your name" name="name">
+
+        <label for="">Subject :</label>
+        <input type="text" placeholder="Enter your subject" name="subject">
+
+        <label for="">City :</label>
+        <input type="text" placeholder="Enter your city" name="city">
+
+        <br>
+        <button type="submit">Click</button>
+    </form>
+    <br>
+    <br>
+    <div id="aa">
+        <table border="2" width="50%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>city</th>
+                    <th colspan="2">action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% students.map((e,i) =>{ %>
+                <tr>
+                    <td> <%=e.id%></td>
+                    <td> <%=e.name%></td>
+                    <td> <%=e.subject%></td>
+                    <td> <%=e.city%></td>
+                    <td>
+                        
+                        <a href="/edit/<%=e.id%>"><button class="action-button">Edit</button></a>
+                        
+                        <a href="/delete?Id=<%=e.id%>"><button class="action-button">Delete</button></a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
