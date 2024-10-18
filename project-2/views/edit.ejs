@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+ 
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input, select, textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Customize select dropdown */
+  select {
+    appearance: none;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Customize textarea */
+  textarea {
+    resize: vertical;
+  }
+</style>
+
+<body>
+
+    <h1> FORM</h1>
+
+  <form action="/update" method="post">
+ 
+<input type="text" name="id" hidden value="<%=singleData.id%>">
+
+    <input type="text" value="<%=singleData.title%>" placeholder="Enter your name" name="title">
+
+
+    <input type="text"  value="<%=singleData.author%>" placeholder="Enter your authorName" name="author">
+
+    
+    <input type="date" value="<%=singleData.publicationDate%>"  placeholder="Enter your publicationDate" name="publicationDate">
+
+    <select name="genre" value={book.genre} onChange={handleChange}>
+      <option value="">Select Genre</option>
+      <option value="Fiction">Fiction</option>
+      <option value="Non-Fiction">Non-Fiction</option>
+      <option value="Mystery">Mystery</option>
+      <option value="Thriller">Thriller</option>
+    </select>
+
+    <input type="text" value="<%=singleData.description%>" placeholder="Enter your description%" name="description%">
+
+    
+
+   
+  
+
+    <br>
+    <button type="submit"> Click</button>
+  </form>
+    
+</body>
+</html>

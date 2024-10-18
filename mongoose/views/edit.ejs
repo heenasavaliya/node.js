@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  h1{
+    text-align: center;
+  }
+  form{
+    max-width: 500px;
+     margin: 40px auto;
+     padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+</style>
+<body>
+
+    <h1> FORM</h1>
+
+  <form action="/update" method="post">
+ 
+<input type="text" name="id" hidden value="<%=singleData.id%>">
+
+    <input type="text" value="<%=singleData.name%>" placeholder="Enter your name" name="name">
+
+
+    <input type="text"  value="<%=singleData.subject%>" placeholder="Enter your subject" name="subject">
+
+   
+  
+
+    <br>
+    <button type="submit"> Click</button>
+  </form>
+    
+</body>
+</html>
